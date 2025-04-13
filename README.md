@@ -1,11 +1,5 @@
 # Gensyn
 
-[ If you are running node only with CPU ]
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-CPU_ONLY=true ./run_rl_swarm.sh
-```
 [ If you want to push models to huggingface, Use this code before node startup:- ]
 ```bash
 git config --global credential.helper store
