@@ -45,3 +45,19 @@ More easily create an SSH tunnel
 { If you want to restore your node with `swarm.pem` & email }
 
 Follow all the steps like installing dependencies, starting the node etc but when you reach at `userData.json` close the screen/node then copy your backed up `swarm.pem` to repo folder also change its owner permission to write and then start the node again and follow the process normally.
+
+{ Some imp commands }
+
+To clear/del repo folder for starting fresh node installation
+`rm -rf ~/(your repo folder name eg. rl-swarm)`
+Minimize node/screen
+`CTRL+A+D`
+Return to node screen
+`screen -r (screen name eg. rlswarm)`
+To stop node or kill screen
+`screen -XS (screen name eg. rlswarm) quit` or `killall screen`
+
+
+
+
+
