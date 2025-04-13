@@ -1,4 +1,18 @@
-# gensyn
+# Gensyn
+
+[ If you are running node only with CPU ]
+
+python3 -m venv .venv
+source .venv/bin/activate
+CPU_ONLY=true ./run_rl_swarm.sh
+
+[ If you want to push models to huggingface ]
+
+Use this code before node startup:-
+
+git config --global credential.helper store
+
+[ What to do after: Waiting for userData.json to be created... ]
 
 **If running locally (i.e. on a macbook): **
 
