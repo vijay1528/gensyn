@@ -50,10 +50,13 @@ Follow all the steps like installing dependencies, starting the node etc but whe
 
 To clear/del repo folder for starting fresh node installation
 `rm -rf ~/(your repo folder name eg. rl-swarm)`
+
 Minimize node/screen
 `CTRL+A+D`
+
 Return to node screen
 `screen -r (screen name eg. rlswarm)`
+
 To stop node or kill screen
 `screen -XS (screen name eg. rlswarm) quit` or `killall screen`
 
