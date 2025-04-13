@@ -42,3 +42,6 @@ More easily create an SSH tunnel
 5. Go back to the terminal and wait for it to carry on
 6. You can now close the cloudflared terminal / ssh connection and the browser tab
 
+{ If you want to restore your node with `swarm.pem` & email }
+
+Follow all the steps like installing dependencies, starting the node etc but when you reach at `userData.json` close the screen/node then copy your backed up `swarm.pem` to repo folder also change its owner permission to write and then start the node again and follow the process normally.
