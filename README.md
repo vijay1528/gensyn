@@ -1,5 +1,14 @@
 # Gensyn
 
+Node's Important Dependencies:
+
+Install sudo
+`apt update && apt install -y sudo`
+Install Dependencies
+`sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl wget screen git lsof nano unzip`
+Nodejs And NPM (thanks to zunxbt)
+`curl -sSL https://raw.githubusercontent.com/zunxbt/installation/main/node.sh | bash`
+
 [ If you want to push models to huggingface, Use this code before node startup:- ]
 ```bash
 git config --global credential.helper store
@@ -39,6 +48,9 @@ More easily create an SSH tunnel
 { If you want to restore your node with `swarm.pem` & email }
 
 Follow all the steps like installing dependencies, starting the node etc but when you reach at `userData.json` close the screen/node then copy your backed up `swarm.pem` to repo folder also change its owner permission to write and then start the node again and follow the process normally.
+
+One more simple way:
+When you clone gensyn repo, copy your backed swarm and change its owner permission to write. it shoould look like rw-r-r
 
 { Some imp commands }
 
