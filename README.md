@@ -70,5 +70,38 @@ To stop node or kill screen
 
 
 
+ERROR: hivemind.p2p.p2p_daemon_bindings.utils.P2PDaemonError: Daemon failed to start: 2025/05/15 xxxxxx failed to connect to bootstrap peers
+some specific peers are offline, we must looking other online peers
 
+Solution: 
+1. under directory rl-swarm, typing: nano hivemind_exp/runner/gensyn/testnet_grpo_runner.py 
+2. see picture and modify like this
+```
+    def get_initial_peers(self) -> list[str]:
+    # Skip chain lookup if no peers provided
+        if not getattr(self, 'force_chain_lookup', True):
+                return []
+
+    # Original chain lookup
+        peers = self.coordinator.get_bootnodes()
+        logger.info(f"Bootnodes from chain: {peers}")
+
+    # Filter out dead peers (optional)
+        alive_peers = [p for p in peers if not p.startswith('/ip4/38.101.215.14')]
+        return alive_peers if alive_peers else []
+```
+3. in my case (or most users maybe) 38.101.215.14 provide offline peers
+3b. I forgot, nano run_rl_swarm.sh and find DEFAULT_PEER_MULTI_ADDRS="/ip4/38.101.215.14/tcp/30002/p2p/QmQ2gEXoPJg6iMBSUFWGzAabS2VhnzuS782Y637hGjfsRJ"  (could be diffirent)
+and change it into: DEFAULT_PEER_MULTI_ADDRS=""
+yes, let it blank
+4. re run in python env
+5. let me know if it worked, I tried only 1 node in my CPU mode and working, score,rewards also increased
+---==  GOOD LUCK  ==--
+
+NOTE
+    # Filter out dead peers (optional)
+        alive_peers = [p for p in peers if not p.startswith('/ip4/38.101.215.15')]
+        return alive_peers if alive_peers else []
+
+it could be your another IP like 38.101.215.14,etc...you must check in your CLI
 
